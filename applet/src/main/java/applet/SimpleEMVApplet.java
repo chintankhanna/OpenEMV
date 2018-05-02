@@ -67,7 +67,7 @@ public class SimpleEMVApplet extends Applet implements EMVConstants {
         short []atcpersistent = new short[1];
         final static short SW_CardBlock = (short) 0x6A81;
         
-	private SimpleApplet() {
+	private SimpleEMVApplet() {
                
                 datatemp = JCSystem.makeTransientByteArray((short)256, JCSystem.CLEAR_ON_DESELECT);
 		response = JCSystem.makeTransientByteArray((short)256, JCSystem.CLEAR_ON_DESELECT);
@@ -94,7 +94,7 @@ public class SimpleEMVApplet extends Applet implements EMVConstants {
 	 * @see javacard.framework.Applet#install(byte[], byte, byte)
 	 */
 	public static void install(byte[] buffer, short offset, byte length) {
-		(new SimpleApplet()).register();
+		(new SimpleEMVApplet()).register();
 	}
 
 	/**
